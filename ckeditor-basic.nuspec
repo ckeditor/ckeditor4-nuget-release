@@ -3,15 +3,16 @@
   <metadata>
     <id>ckeditor-basic</id>
     <version>1.0.0</version>
-    <authors>Mark deVilliers</authors>
+    <authors>CKSource (http://cksource.com/)</authors>
     <owners>Mark deVilliers ckeditor</owners>
     <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/stable/standard/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
+    <iconUrl>https://docs.ckeditor.com/resources/images/logo-big.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Automated Nuget package of the basic build, version : $version$ of ckeditor.</description>
-    <releaseNotes>Automated Nuget package of the basic build, version : $version$ of ckeditor..</releaseNotes>
-    <copyright>Copyright 2016</copyright>
-    <tags>ckeditor</tags>
+    <description>JavaScript WYSIWYG web text editor.</description>
+    <releaseNotes>Automated Nuget package of the basic build, version : $version$ of ckeditor.</releaseNotes>
+    <copyright>Copyright 2003-2017</copyright>
+    <tags>ckeditor editor wysiwyg html richtext text javascript</tags>
     <dependencies />
   </metadata>
    <files>
