@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>Mark deVilliers</authors>
     <owners>Mark deVilliers ckeditor</owners>
-    <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/stable/standard/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Automated Nuget package of the standard build, version : $version$ of ckeditor.</description>
