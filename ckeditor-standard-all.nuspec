@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Automated Nuget package of the standard-all build, version : $version$ of ckeditor.</description>
-    <releaseNotes>Automated Nuget package of the standard-all build, version : $version$ of ckeditor.</releaseNotes>
+    <releaseNotes>See https://github.com/ckeditor/ckeditor-releases/blob/master/CHANGES.md for a complete list of changes.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>ckeditor</tags>
     <dependencies />
