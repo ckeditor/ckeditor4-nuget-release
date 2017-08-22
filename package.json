@@ -1,6 +1,6 @@
 {
   "name": "ckeditor4-nuget-release",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple script for releasing NuGet packages.",
   "main": "bin/index.js",
   "bin": {
