@@ -42,11 +42,9 @@ function bundlePreset( presetName, version, buildDir ) {
 				cmd += ` -properties preset=-${presetName}`
 			}
 
-			cmd += ' -BasePath ' + RELEASE_PATH;
-
-			cmd += ' -OutputDirectory ' + buildDir;
-
-			console.log( cmd );
+			// Make sure sources are picked from ckeditor-releases dir and the build is
+			// saved in a os tmp dir.
+			cmd += ' -BasePath ' + RELEASE_PATH + ' -OutputDirectory ' + buildDir;
 
 			return exec( cmd );
 		} )
@@ -80,7 +78,7 @@ run the script once again.` );
 
 async function publishNugets() {
 	// let presets = [ 'standard', 'standard-all', 'full' ],
-	let presets = [ 'full' ],
+	let presets = [ 'full', 'standard-all' ],
 		chain = Promise.resolve();
 
 	try {
