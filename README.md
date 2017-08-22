@@ -1,75 +1,24 @@
-To view on Nuget : 
 
-https://www.nuget.org/packages/ckeditor-full
+## Installation
 
-https://www.nuget.org/packages/ckeditor-standard
+Make sure you have `nuget` library in your system PATH.
 
-https://www.nuget.org/packages/ckeditor-basic
+```
+npm install -g ckeditor4-nuget-release
+```
 
-https://www.nuget.org/packages/ckeditor-standard-all
+## Usage
 
-The following versions have been published :
+```
+cd ckeditor-releases
+ckeditor4-nuget-release <version> --push
+```
 
-4.0.3
+## NuGet links
 
-4.1.3
+NuGets are available under following links:
 
-4.2.3
-
-4.3.2
-
-4.3.3
-
-4.3.4
-
-4.3.5
-
-4.4.0
-
-4.4.1
-
-4.4.2
-
-4.4.3
-
-4.4.4
-
-4.4.5
-
-4.4.6
-
-4.4.7
-
-4.4.8
-
-4.5.0
-
-4.5.1
-
-4.5.2
-
-4.5.3
-
-4.5.4
-
-4.5.5
-
-4.5.6
-
-4.5.7
-
-4.5.8
-
-4.5.9
-
-4.5.10
-
-4.5.11
-
-4.6.0
-
-4.6.1
-
-4.6.2
-
-4.7.0
+* https://www.nuget.org/packages/ckeditor-basic
+* https://www.nuget.org/packages/ckeditor-standard
+* https://www.nuget.org/packages/ckeditor-standard-all
+* https://www.nuget.org/packages/ckeditor-full
