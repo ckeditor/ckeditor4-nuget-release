@@ -16,6 +16,6 @@
     <dependencies />
   </metadata>
    <files>
-        <file src="ckeditor-releases\**\*.*" target="content\Scripts\ckeditor" exclude="ckeditor-releases\samples\**\*.*;ckeditor-releases\bower.json;ckeditor-releases\build-config.js;ckeditor-releases\composer.json;ckeditor-releases\.git\**\*.*" />
+        <file src="**\*.*" target="content\Scripts\ckeditor" exclude="samples\**\*.*;bower.json;build-config.js;composer.json;.git\**\*.*" />
 	</files>
 </package>

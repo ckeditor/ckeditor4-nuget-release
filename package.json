@@ -21,6 +21,8 @@
   "homepage": "https://github.com/ckeditor/ckeditor-nuget#readme",
   "dependencies": {
     "child-process-promise": "^2.2.1",
-    "command-exists": "^1.2.2"
+    "command-exists": "^1.2.2",
+    "os-tmpdir": "^1.0.2",
+    "tmp": "0.0.33"
   }
 }
