@@ -38,9 +38,7 @@ function bundlePreset( presetName, version, buildDir ) {
 			let nuspecPath = path.join( path.dirname( __filename ), '..', 'ckeditor.nuspec' ),
 				cmd = `${NUGET_BIN} pack ${nuspecPath} -version ${version}`;
 
-			if ( presetName != STANDARD_ALL ) {
-				cmd += ` -properties preset=-${presetName}`
-			}
+			cmd += ` -properties preset=-${presetName}`
 
 			// Make sure sources are picked from ckeditor-releases dir and the build is
 			// saved in a os tmp dir.
@@ -56,7 +54,8 @@ function bundlePreset( presetName, version, buildDir ) {
 };
 
 function publishPreset( presetName, version, buildDir ) {
-	let nugetName = 'ckeditor' + ( presetName === STANDARD_ALL ? '' : '-' + presetName ) + `.${version}.nupkg`,
+	let nugetName = `ckeditor-${presetName}.${version}.nupkg`,
+	// let nugetName = 'ckeditor' + ( presetName === STANDARD_ALL ? '' : '-' + presetName ) + `.${version}.nupkg`,
 		cmd = `${NUGET_BIN} push ${path.join( buildDir, nugetName )} -Source https://www.nuget.org/api/v2/package`;
 
 	// Checkout tag in release repo.
@@ -77,8 +76,7 @@ run the script once again.` );
 }
 
 async function publishNugets() {
-	// let presets = [ 'standard', 'standard-all', 'full' ],
-	let presets = [ 'full', 'standard-all' ],
+	let presets = [ 'basic', 'standard', 'standard-all', 'full' ],
 		chain = Promise.resolve();
 
 	try {
