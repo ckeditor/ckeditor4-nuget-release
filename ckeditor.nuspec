@@ -4,7 +4,7 @@
     <id>ckeditor$preset$</id>
     <version>$version$</version>
     <authors>CKSource (http://cksource.com/)</authors>
-    <owners>Mark deVilliers ckeditor</owners>
+    <owners>ckeditor</owners>
     <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
     <iconUrl>https://c.cksource.com/a/1/img/nuget/ckeditor-4.png</iconUrl>
