@@ -7,7 +7,7 @@
     <owners>Mark deVilliers ckeditor</owners>
     <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
-    <iconUrl>https://docs.ckeditor.com/resources/images/logo-big.png</iconUrl>
+    <iconUrl>https://c.cksource.com/a/1/img/nuget/ckeditor-4.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>JavaScript WYSIWYG web text editor.</description>
     <releaseNotes>See https://github.com/ckeditor/ckeditor-releases/blob/$version$/CHANGES.md for a complete list of changes.</releaseNotes>
