@@ -21,8 +21,8 @@ if ( !buildVersion || process.argv.includes( '--help' ) ) {
 	process.exit( 0 );
 }
 
-if ( path.basename( RELEASE_PATH ) != 'ckeditor-releases' ) {
-	console.log( 'This script must be called from ckeditor-releases directory.' );
+if ( path.basename( RELEASE_PATH ) != 'ckeditor4-releases' ) {
+	console.log( 'This script must be called from ckeditor4-releases directory.' );
 	process.exit( 0 );
 }
 
@@ -40,7 +40,7 @@ function bundlePreset( presetName, version, buildDir ) {
 
 			cmd += ` -properties preset=-${presetName}`
 
-			// Make sure sources are picked from ckeditor-releases dir and the build is
+			// Make sure sources are picked from ckeditor4-releases dir and the build is
 			// saved in a os tmp dir.
 			cmd += ' -BasePath ' + RELEASE_PATH + ' -OutputDirectory ' + buildDir;
 
