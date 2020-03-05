@@ -5,12 +5,12 @@
     <version>$version$</version>
     <authors>CKSource (http://cksource.com/)</authors>
     <owners>ckeditor</owners>
-    <licenseUrl>https://github.com/ckeditor/ckeditor-releases/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/ckeditor/ckeditor-releases</projectUrl>
+    <licenseUrl>https://github.com/ckeditor/ckeditor4-releases/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/ckeditor/ckeditor4-releases</projectUrl>
     <iconUrl>https://c.cksource.com/a/1/img/nuget/ckeditor-4.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>JavaScript WYSIWYG web text editor.</description>
-    <releaseNotes>See https://github.com/ckeditor/ckeditor-releases/blob/$version$/CHANGES.md for a complete list of changes.</releaseNotes>
+    <releaseNotes>See https://github.com/ckeditor/ckeditor4-releases/blob/$version$/CHANGES.md for a complete list of changes.</releaseNotes>
     <copyright>Copyright 2003-2019</copyright>
     <tags>ckeditor editor wysiwyg html richtext text javascript</tags>
     <dependencies />

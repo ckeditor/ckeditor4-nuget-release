@@ -16,8 +16,8 @@ In addition to that you should already have nuget token set using `nuget setApiK
 ## Usage
 
 ```
-# This bin has to be ran from ckeditor-releases directory.
-cd ckeditor-releases
+# This bin has to be ran from `ckeditor4-releases` directory.
+cd ckeditor4-releases
 ckeditor4-nuget-release <version> --push
 ```
 
