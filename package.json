@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckeditor/ckeditor-nuget.git"
+    "url": "git+https://github.com/ckeditor/ckeditor4-nuget-release.git"
   },
   "author": "CKSource (http://cksource.com/)",
   "license": "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)",
   "bugs": {
-    "url": "https://github.com/ckeditor/ckeditor-nuget/issues"
+    "url": "https://github.com/ckeditor/ckeditor4-nuget-release/issues"
   },
-  "homepage": "https://github.com/ckeditor/ckeditor-nuget#readme",
+  "homepage": "https://github.com/ckeditor/ckeditor4-nuget-release#readme",
   "dependencies": {
     "child-process-promise": "^2.2.1",
     "command-exists": "^1.2.2",
