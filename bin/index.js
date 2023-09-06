@@ -27,7 +27,7 @@ if ( path.basename( RELEASE_PATH ) != 'ckeditor4-releases' ) {
 }
 
 function bundlePreset( presetName, version, buildDir ) {
-	var releaseTag = presetName === STANDARD_ALL ? version : `${presetName}/${version}`;
+	const releaseTag = presetName === STANDARD_ALL ? `${ version }-lts` : `${ presetName }/${ version }-lts`;
 
 	console.log( `---\nBundling ${presetName} NuGet package...` );
 
