@@ -8,6 +8,7 @@ const path = require( 'path' ),
 	os = require( 'os' ),
 	exec = require( 'child-process-promise' ).exec,
 	osTmpDir = require( 'tmp' ).dirSync,
+	{ cp } = require( 'fs/promises' ),
 	commandExists = require( 'command-exists' ),
 	STANDARD_ALL = 'standard-all',
 	NUGET_BIN = 'nuget',
@@ -26,31 +27,44 @@ if ( path.basename( RELEASE_PATH ) != 'ckeditor4-releases' ) {
 	process.exit( 0 );
 }
 
-function bundlePreset( presetName, version, buildDir ) {
+async function bundlePreset( presetName, version, buildDir ) {
 	const releaseTag = presetName === STANDARD_ALL ? `${ version }-lts` : `${ presetName }/${ version }-lts`;
 
-	console.log( `---\nBundling ${presetName} NuGet package...` );
+	console.log( `---\nBundling ${ presetName } NuGet package...` );
 
-	// Checkout tag in release repo.
-	return exec( `git co ${releaseTag}`, { cwd: RELEASE_PATH } )
-		// Use nuget bin to bundle package.
-		.then( res => {
-			let nuspecPath = path.join( path.dirname( __filename ), '..', 'ckeditor.nuspec' ),
-				cmd = `${NUGET_BIN} pack ${nuspecPath} -version ${version}`;
+	try {
+		// Checkout tag in release repo.
+		await exec( `git checkout ${ releaseTag }`, { cwd: RELEASE_PATH } );
 
-			cmd += ` -properties preset=-${presetName}`
+		const presetDir = path.resolve( buildDir, presetName );
 
-			// Make sure sources are picked from ckeditor4-releases dir and the build is
-			// saved in a os tmp dir.
-			cmd += ' -BasePath ' + RELEASE_PATH + ' -OutputDirectory ' + buildDir;
-
-			return exec( cmd );
-		} )
-		.then( res => res ? console.log( 'NuGet output:', res.stdout ) : null )
-		.then(() => console.log( `NuGet package for ${presetName} built.` ) )
-		.catch( err => {
-			throw new Error( `Error occured while bundling ${presetName} preset:\n` + err );
+		await cp( RELEASE_PATH, presetDir, {
+			recursive: true
 		} );
+
+		// Copy the cached readme back to the project dir.
+		await copyReadme( buildDir, presetDir );
+
+		// Use nuget bin to bundle package.
+		let nuspecPath = path.join( path.dirname( __filename ), '..', 'ckeditor.nuspec' ),
+			cmd = `${ NUGET_BIN } pack ${ nuspecPath } -version ${ version }`;
+
+		cmd += ` -properties preset=-${ presetName }`
+
+		// Make sure sources are picked from ckeditor4-releases dir copied to the temp and the build is
+		// saved in a os tmp dir.
+		cmd += ' -BasePath ' + presetDir + ' -OutputDirectory ' + buildDir;
+
+		const res = await exec( cmd );
+
+		if ( res ) {
+			console.log( 'NuGet output:', res.stdout );
+		}
+
+		console.log( `NuGet package for ${ presetName } built.` );
+	}catch( err ) {
+		throw new Error( `Error occured while bundling ${ presetName } preset:\n` + err );
+	};
 };
 
 function publishPreset( presetName, version, buildDir ) {
@@ -75,14 +89,36 @@ run the script once again.` );
 		} );
 }
 
+async function cacheReadme( version, tempDirectory ) {
+	const releaseTag = `${ version }-lts`;
+
+	await exec( `git checkout ${ releaseTag }` );
+
+	const readmeSrcDir = path.resolve( RELEASE_PATH, '.npm' );
+	const readmeCacheDir = path.resolve( tempDirectory, 'readme' );
+
+	await cp( readmeSrcDir, readmeCacheDir, {
+		recursive: true
+	} );
+}
+
+async function copyReadme( tempDirectory, presetDir ) {
+	const readmeCacheDir = path.resolve( tempDirectory, 'readme' );
+
+	await cp( readmeCacheDir, presetDir, {
+		recursive: true
+	} );
+}
+
 async function publishNugets() {
-	let presets = [ 'basic', 'standard', 'standard-all', 'full' ],
-		chain = Promise.resolve();
+	let presets = [ 'basic', 'standard', 'standard-all', 'full' ];
 
 	try {
 		await checkNugetBinary();
 
 		let buildDir = osTmpDir().name;
+
+		await cacheReadme( buildVersion, buildDir );
 
 		for ( let presetName of presets ) {
 			await bundlePreset( presetName, buildVersion, buildDir );
