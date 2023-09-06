@@ -17,6 +17,6 @@
     <dependencies />
   </metadata>
    <files>
-        <file src="**\*.*" target="content\Scripts\ckeditor" exclude="samples\**\*.*;bower.json;build-config.js;composer.json;.git\**\*.*" />
+        <file src="**\*.*" target="content\Scripts\ckeditor" exclude="samples\**\*.*;bower.json;build-config.js;composer.json;.git\**\*.*;.npm\**\*.*" />
 	</files>
 </package>
