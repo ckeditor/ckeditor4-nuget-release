@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/ckeditor4.svg)](https://www.npmjs.com/package/ckeditor4)
 [![GitHub tag](https://img.shields.io/github/tag/ckeditor/ckeditor4.svg)](https://github.com/ckeditor/ckeditor4-releases)
-[![Build Status](https://app.travis-ci.com/ckeditor/ckeditor4.svg?branch=master)](https://app.travis-ci.com/ckeditor/ckeditor4)
+[![Build Status](https://api.travis-ci.com/ckeditor/ckeditor4.svg?branch=master)](https://app.travis-ci.com/ckeditor/ckeditor4)
 
 [![Join newsletter](https://img.shields.io/badge/join-newsletter-00cc99.svg)](http://eepurl.com/c3zRPr)
 [![Follow Twitter](https://img.shields.io/badge/follow-twitter-00cc99.svg)](https://twitter.com/ckeditor)
@@ -70,7 +70,7 @@ A highly configurable WYSIWYG HTML editor with hundreds of features, from creati
 
 It supports a broad range of browsers, including legacy ones.
 
-![CKEditor 4 screenshot](https://c.cksource.com/a/1/img/npm/ckeditor4.png)
+![CKEditor 4 screenshot](https://raw.githubusercontent.com/ckeditor/ckeditor4-releases/master/.npm/assets/ckeditor4.png)
 
 ## Getting started
 
