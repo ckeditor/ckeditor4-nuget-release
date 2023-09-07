@@ -43,7 +43,7 @@ async function bundlePreset( presetName, version, buildDir ) {
 		} );
 
 		// Copy the cached readme back to the project dir.
-		await copyReadme( buildDir, presetDir );
+		await copyReadme( presetDir );
 
 		// Use nuget bin to bundle package.
 		let nuspecPath = path.join( path.dirname( __filename ), '..', 'ckeditor.nuspec' ),
@@ -89,25 +89,11 @@ run the script once again.` );
 		} );
 }
 
-async function cacheReadme( version, tempDirectory ) {
-	const releaseTag = `${ version }-lts`;
+async function copyReadme( presetDir ) {
+	const readmeSourcePath = path.resolve( __dirname, '..', '.nuget', 'README.md' );
+	const readmeDistPath = path.resolve( presetDir, 'README.md' );
 
-	await exec( `git checkout ${ releaseTag }` );
-
-	const readmeSrcDir = path.resolve( RELEASE_PATH, '.npm' );
-	const readmeCacheDir = path.resolve( tempDirectory, 'readme' );
-
-	await cp( readmeSrcDir, readmeCacheDir, {
-		recursive: true
-	} );
-}
-
-async function copyReadme( tempDirectory, presetDir ) {
-	const readmeCacheDir = path.resolve( tempDirectory, 'readme' );
-
-	await cp( readmeCacheDir, presetDir, {
-		recursive: true
-	} );
+	await cp( readmeSourcePath, readmeDistPath );
 }
 
 async function publishNugets() {
@@ -117,8 +103,6 @@ async function publishNugets() {
 		await checkNugetBinary();
 
 		let buildDir = osTmpDir().name;
-
-		await cacheReadme( buildVersion, buildDir );
 
 		for ( let presetName of presets ) {
 			await bundlePreset( presetName, buildVersion, buildDir );
