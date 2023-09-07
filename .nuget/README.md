@@ -35,7 +35,7 @@ In order to activate CKEditor 4 LTS, add `licenseKey` configure the editor with 
 </script>
 ```
 
-The NPM package is tagged as 4.23.* without the `-lts` suffix, to keep it consistent with NPM versioning guidelines. Note that the version 4.23.0 and above are the LTS versions of the editor.
+The CKEditor 4 Nuget packages are tagged as 4.23.* without the `-lts` suffix, to keep it consistent with semantic versioning guidelines. Note that the version 4.23.0 and above are the LTS versions of the editor.
 
 ### Getting CKEditor 4 (Open Source)
 
@@ -113,7 +113,7 @@ Since the introduction of the LTS version of CKEditor (`4.23.0-lts`) in July 202
 
 ## Presets
 
-The CKEditor 4 npm package comes in the `standard-all` preset, so it includes all official CKEditor plugins, with those from the [standard package](https://sdk.ckeditor.com/samples/standardpreset.html) active by default.
+The CKEditor 4 Nuget packages come in [`basic`](https://www.nuget.org/packages/ckeditor-basic), [`full`](https://www.nuget.org/packages/ckeditor-full), [`standard`](https://www.nuget.org/packages/ckeditor-standard) and [`standard-all`](https://www.nuget.org/packages/ckeditor-standard-all) presets, so they differ on which of official CKEditor plugins are included in each other. You can check differences between presets in the [official documentation](https://ckeditor.com/cke4/presets-all).
 
 ## Further Resources
 
