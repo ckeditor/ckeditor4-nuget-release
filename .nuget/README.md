@@ -74,11 +74,13 @@ It supports a broad range of browsers, including legacy ones.
 
 ## Getting started
 
-### Using [npm package](https://www.npmjs.com/package/ckeditor4)
+### Using [Nuget package](https://www.nuget.org/packages/ckeditor-standard)
 
 ```bash
-npm install --save ckeditor4
+nuget install ckeditor4-standard
 ```
+
+Instead of the standard preset, you can use any of the [supported presets](#presets).
 
 Use it on your website:
 
@@ -86,7 +88,7 @@ Use it on your website:
 <div id="editor">
     <p>This is the editor content.</p>
 </div>
-<script src="./node_modules/ckeditor4/ckeditor.js"></script>
+<script src="./ckeditor-standard.<version>/content/Scripts/ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'editor' );
 </script>
