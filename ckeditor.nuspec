@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>JavaScript WYSIWYG web text editor.</description>
     <readme>content\Scripts\ckeditor\README.md</readme>
-    <releaseNotes>See https://github.com/ckeditor/ckeditor4-releases/blob/$version$/CHANGES.md for a complete list of changes.</releaseNotes>
+    <releaseNotes>See https://github.com/ckeditor/ckeditor4-releases/blob/$version$-lts/CHANGES.md for a complete list of changes.</releaseNotes>
     <copyright>Copyright 2003-2023</copyright>
     <tags>ckeditor editor wysiwyg html richtext text javascript</tags>
     <dependencies />
